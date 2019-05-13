@@ -1,15 +1,15 @@
 #if !defined(FX_H)
 #define FX_H
 
-typedef struct fila {
-    // estamos armazenando o num como char para podermos acessar os dígitos pelos indíce ex.: num = 245, num[2] = 5;
-    char *num;
-    struct fila *prox;
-} Fila;
-
-Fila *adicionar_na_fila(Fila *node, char *elem);
-Fila *remover_da_fila(Fila *node);
-void visualizar_fila(Fila *node);
-Fila *percorrer_fila(Fila *node);
+// Função para gerar uma lista com n elementos aleatórios de d dígitos
+// n = quantidade de elementos
+// d = quantidade de dígitos
+int *gerar_lista(int n, int d);
+// Função para visualizar elementos da lista
+// arr = ponteiro pro vetor
+// len = comprimento do vetor
+void visualizar_lista(int *arr, int len);
+// Função que pega a entrada do usuario para gerar o vetor preenchido com n elementos de d digitos e em seguida imprime o conteudo na tela
+int *gerar_vetor_preenchido();
 
 #endif // FX_H
