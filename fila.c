@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-Fila *adicionar_na_fila(Fila *node, char *elem) {
+Fila *adicionar_na_fila(Fila *node, int elem) {
     Fila *new = (Fila *) malloc(sizeof(Fila));
     new->num = elem;
     new->prox = NULL;
