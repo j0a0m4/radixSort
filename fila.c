@@ -8,6 +8,7 @@ Head *inicializar_vetor(int len) {
     for (int i = 0; i < len; i++) {
         // Inicialização do vetor
         vetorFilas = (Head *) malloc(sizeof(Head));
+        vetorFilas->prox = NULL;
         vetorFilas++;
     }
     return vetor;
@@ -37,10 +38,23 @@ Fila *remover_da_fila(Fila *node) {
 
 void visualizar_fila(Head *head) {
     Fila *node = head->prox;
-    printf("----------Fila---------\n");
     while (node != NULL) {
         printf("Num: %d \n", node->num);
         node = node->prox;
+    }
+    printf("-------------------\n");
+}
+
+void visualizar_vetor_filas(Head *head, int len) {
+    Head *vetor = head;
+    for (int i = 0; i < len; i++) {
+        if (vetor->prox != NULL) {
+            printf("Fila[%d]\n", i);
+            visualizar_fila(vetor);
+        } else {
+            printf("Fila[%d] Vazia\n", i);
+        }
+        vetor++;
     }
 }
 

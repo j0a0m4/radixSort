@@ -18,7 +18,9 @@
     Head *vetorFilas = inicializar_vetor(b);
     adicionar_na_fila(&vetorFilas[0],20);
     adicionar_na_fila(&vetorFilas[0],30);
-    visualizar_fila(&vetorFilas[0]);
+    adicionar_na_fila(&vetorFilas[1],61);
+    adicionar_na_fila(&vetorFilas[2],92);
+    visualizar_vetor_filas(vetorFilas, b);
     return 0;
  }
  
