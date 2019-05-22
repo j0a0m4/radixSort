@@ -26,9 +26,9 @@
         // Vetor com dígitos mapeados
         int vetorMapeado[n][d];
         for (int a = 0; a < n; a++) {
-            int *elem = vetorizar_int(vetor[a]);
+            int *elem = vetorizar_int(vetor[a], d);
             int len = contar_digitos(vetor[a]);
-            for (int b = 0; b < len; b++) {
+            for (int b = 0; b < d; b++) {
                 vetorMapeado[a][b] = elem[b];
             } 
         }
