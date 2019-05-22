@@ -9,14 +9,13 @@ int *gerar_lista(int n, int d) {
     // para gerar novos items em cada execução
     srand(time(0));
     //determinar paramentros para gerar d digitos
-    int a = (int) pow(10,(d - 1));
-    int b = 9 * a;
+    int limit = (int) pow(10,d);
     //alocar espaco dinamicamente na memoria para o vetor
     int *vetor = (int *) malloc(n * sizeof(int));
     // iterar sobre o vetor para adicionar elementos
     for (int i = 0; i < n; i++) {
         // gerar elemento aleatório com d digitos
-        int num = rand() % (b - a + 1) + a;
+        int num = rand() % limit;
         vetor[i] = num;
     }
     // retornar ponteiro para o vetor
@@ -41,16 +40,20 @@ int contar_digitos(int num) {
     return count;
 }
 
-int *vetorizar_int(int elem){
+int *vetorizar_int(int elem, int d){
     int len = contar_digitos(elem);
-    int aux[len];
+    int aux[d];
     int z = 0;
-    int *numero = malloc(len * sizeof(int));
-    for (int i = 0; i < len; i++) {
-        aux[i] = elem % 10;
-        elem /= 10;
+    int *numero = malloc(d * sizeof(int));
+    for (int i = 0; i < d; i++) {
+        if (i <= (len - 1)) {
+            aux[i] = elem % 10;
+            elem /= 10;
+        } else {
+            aux[i] = 0;
+        }
     }
-    for (int i = (len - 1); i >= 0; i--) {
+    for (int i = (d - 1); i >= 0; i--) {
         numero[i] = aux[z];
         z++;
     }

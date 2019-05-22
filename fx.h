@@ -13,6 +13,6 @@ void visualizar_lista(int *arr, int len);
 // num = inteiro a ser contado
 int contar_digitos(int num);
 // Transformar um inteiro numa representacao vetorial
-int *vetorizar_int(int elem);
+int *vetorizar_int(int elem, int d);
 
 #endif // FX_H
