@@ -12,9 +12,7 @@ void visualizar_lista(int *arr, int len);
 // Função para contar numero de dígitos
 // num = inteiro a ser contado
 int contar_digitos(int num);
-//
+// Transformar um inteiro numa representacao vetorial
 int *vetorizar_int(int elem);
-//
-void mapear_vetor(int vetorMapeado[][10], int vetor[], int n);
 
 #endif // FX_H

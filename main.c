@@ -7,16 +7,20 @@
     // Variaveis
     int b, n, d;
     b = 10;
+
     // Entrada Usuario
     printf("Insira número de elementos: ");
     scanf("%d", &n);
     printf("Insira número de dígitos: ");
     scanf("%d", &d);
+
     // Vetor com as filas
     Head *vetorFilas = inicializar_vetor(b);
+
     // Vetor com numeros gerados aleatoriamente
     int *vetor = gerar_lista(n, d);
     visualizar_lista(vetor, n);
+
     // Radix Sort
     for (int i = (d - 1); i >= 0; i--) {
         // Vetor com dígitos mapeados
@@ -28,12 +32,15 @@
                 vetorMapeado[a][b] = elem[b];
             } 
         }
+        // Adicionar os numeros nas filas de acordo com o digito k
         for (int j = 0; j < n; j++) {
             int k = vetorMapeado[j][i];
             int elem = vetor[j];
             adicionar_na_fila(&vetorFilas[k], elem);
         }
+        // Visualizar filas
         visualizar_vetor_filas(vetorFilas, b);
+        // Esvaziar filas e reoordenar vetor
         int j = 0;
         for (int k = 0; k < b; k++) {
           while ((&vetorFilas[k])->prox != NULL) {
@@ -43,7 +50,8 @@
           } 
         }
     }
-    // Visualizar Vetor
+    // Visualizar vetor ordenado
     visualizar_lista(vetor, n);
+
     return 0;
  }
