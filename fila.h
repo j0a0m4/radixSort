@@ -18,7 +18,7 @@ void visualizar_vetor_filas(Head *vetor, int len);
 // Função para adicionar elemento na fila
 void *adicionar_na_fila(Head *head, int elem);
 // Função para remover elemento na fila
-void *remover_da_fila(Head *head);
+int remover_da_fila(Head *head);
 // Função para visualizar fila
 void visualizar_fila(Head *head);
 // Função para percorrer fila até o último elemento

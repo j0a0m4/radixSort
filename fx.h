@@ -14,5 +14,7 @@ void visualizar_lista(int *arr, int len);
 int contar_digitos(int num);
 //
 int *vetorizar_int(int elem);
+//
+void mapear_vetor(int vetorMapeado[][10], int vetor[], int n);
 
 #endif // FX_H

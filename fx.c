@@ -54,3 +54,13 @@ int *vetorizar_int(int elem){
     }
     return numero;
 }
+
+void mapear_vetor(int vetorMapeado[][10], int vetor[], int n){
+   for (int i = 0; i < n; i++) {
+        int *elem = vetorizar_int(vetor[i]);
+        int len = contar_digitos(vetor[i]);
+        for (int j = 0; j < len; j++) {
+            vetorMapeado[i][j] = elem[j];
+        } 
+    }
+}

@@ -42,11 +42,15 @@ void *adicionar_na_fila(Head *head, int elem) {
     }
 }
 
-void *remover_da_fila(Head *head) {
+int remover_da_fila(Head *head) {
     Fila *node = head->prox;
-    Fila *ptr = node->prox;
-    free(node);
-    head->prox = ptr;
+    if (node != NULL) {
+        Fila *ptr = node->prox;
+        int elem = node->num;
+        free(node);
+        head->prox = ptr;
+        return elem;
+    }
 }
 
 void visualizar_fila(Head *head) {
