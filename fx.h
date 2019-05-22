@@ -9,5 +9,10 @@ int *gerar_lista(int n, int d);
 // arr = ponteiro pro vetor
 // len = comprimento do vetor
 void visualizar_lista(int *arr, int len);
+// Função para contar numero de dígitos
+// num = inteiro a ser contado
+int contar_digitos(int num);
+//
+int *vetorizar_int(int elem);
 
 #endif // FX_H
