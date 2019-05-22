@@ -27,13 +27,7 @@
             vetorMapeado[i][j] = elem[j];
         } 
     }
-    for (int i = 0; i < n; i++) {
-        int len = contar_digitos(vetor[i]);
-        for (int j = 0; j < len; j++) {
-            int digit = vetorMapeado[i][j];
-            printf("Vetor[%d][%d]: %d \n",i,j,digit);
-        } 
-    }
-   
+
+    
     return 0;
  }
