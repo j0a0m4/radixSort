@@ -9,7 +9,5 @@ int *gerar_lista(int n, int d);
 // arr = ponteiro pro vetor
 // len = comprimento do vetor
 void visualizar_lista(int *arr, int len);
-// Função que pega a entrada do usuario para gerar o vetor preenchido com n elementos de d digitos e em seguida imprime o conteudo na tela
-int *gerar_vetor_preenchido();
 
 #endif // FX_H
