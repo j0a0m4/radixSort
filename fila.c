@@ -14,6 +14,19 @@ Head *inicializar_vetor(int len) {
     return vetor;
 }
 
+void visualizar_vetor_filas(Head *head, int len) {
+    Head *vetor = head;
+    for (int i = 0; i < len; i++) {
+        if (vetor->prox != NULL) {
+            printf("Fila[%d]\n", i);
+            visualizar_fila(vetor);
+        } else {
+            printf("Fila[%d] Vazia\n", i);
+        }
+        vetor++;
+    }
+}
+
 void *adicionar_na_fila(Head *head, int elem) {
     Fila *new = (Fila *) malloc(sizeof(Fila));
     new->num = elem;
@@ -29,11 +42,11 @@ void *adicionar_na_fila(Head *head, int elem) {
     }
 }
 
-Fila *remover_da_fila(Fila *node) {
+void *remover_da_fila(Head *head) {
+    Fila *node = head->prox;
     Fila *ptr = node->prox;
     free(node);
-    // Esse retorno é obrigatório, para atualizar o ponteiro do inicio da fila em main
-    return ptr;
+    head->prox = ptr;
 }
 
 void visualizar_fila(Head *head) {
@@ -43,19 +56,6 @@ void visualizar_fila(Head *head) {
         node = node->prox;
     }
     printf("-------------------\n");
-}
-
-void visualizar_vetor_filas(Head *head, int len) {
-    Head *vetor = head;
-    for (int i = 0; i < len; i++) {
-        if (vetor->prox != NULL) {
-            printf("Fila[%d]\n", i);
-            visualizar_fila(vetor);
-        } else {
-            printf("Fila[%d] Vazia\n", i);
-        }
-        vetor++;
-    }
 }
 
 Fila *percorrer_fila(Fila *node) {
