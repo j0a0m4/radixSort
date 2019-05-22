@@ -24,10 +24,12 @@ int *gerar_lista(int n, int d) {
 }
 void visualizar_lista(int *arr, int len) {
     // iterar sobre o vetor arr de comprimento len
+    printf("Tabela: ");
     for (int i = 0; i < len; i++) {
         // imprimir conteúdo na tela
-        printf("Vetor[%d]: %d \n",i, arr[i]);
+        printf("\t%d", arr[i]);
     }
+    printf("\n");
 }
 
 int contar_digitos(int num) {

@@ -18,13 +18,14 @@ void visualizar_vetor_filas(Head *head, int len) {
     Head *vetor = head;
     for (int i = 0; i < len; i++) {
         if (vetor->prox != NULL) {
-            printf("Fila[%d]\n", i);
+            printf("Fila[%d]: ", i);
             visualizar_fila(vetor);
         } else {
-            printf("Fila[%d] Vazia\n", i);
+            printf("Fila[%d]: \n", i);
         }
         vetor++;
     }
+    printf("\n");
 }
 
 void *adicionar_na_fila(Head *head, int elem) {
@@ -58,10 +59,10 @@ int remover_da_fila(Head *head) {
 void visualizar_fila(Head *head) {
     Fila *node = head->prox;
     while (node != NULL) {
-        printf("Num: %d \n", node->num);
+        printf("\t%d", node->num);
         node = node->prox;
     }
-    printf("-------------------\n");
+    printf("\n");
 }
 
 Fila *percorrer_fila(Fila *node) {

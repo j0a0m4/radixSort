@@ -13,7 +13,7 @@
     scanf("%d", &n);
     printf("Insira número de dígitos: ");
     scanf("%d", &d);
-
+    printf("\n");
     // Vetor com as filas
     Head *vetorFilas = inicializar_vetor(b);
 
@@ -49,9 +49,9 @@
               j = j + 1;
           } 
         }
+        // Visualizar vetor reoordenado
+        visualizar_lista(vetor, n);
     }
-    // Visualizar vetor ordenado
-    visualizar_lista(vetor, n);
 
     return 0;
  }
