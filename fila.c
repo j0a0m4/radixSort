@@ -64,3 +64,10 @@ Fila *percorrer_fila(Fila *node) {
     }
     return node;
 }
+
+/* exemplo de como adicionar no vetorFilas usando a funcao adicionar_na_fila
+    adicionar_na_fila(endereço Head da fila, elemento que vai ser inserido);
+    adicionar_na_fila(&vetorFilas[0], 20);
+    adicionar_na_fila(&vetorFilas[1], 61);
+    adicionar_na_fila(&vetorFilas[2], 92);
+*/

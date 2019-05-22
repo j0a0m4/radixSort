@@ -4,23 +4,19 @@
 #include <stdlib.h>
 
  int main(int argc, char const *argv[]) {
-    // Variáveis
+    // Variaveis
     int b, n, d;
     b = 10;
+    // Entrada Usuario
     printf("Insira número de elementos: ");
     scanf("%d", &n);
     printf("Insira número de dígitos: ");
     scanf("%d", &d);
     // Vetor com numeros gerados aleatoriamente
-    int *vetor = gerar_lista(n,d);
-    visualizar_lista(vetor,n);
+    int *vetor = gerar_lista(n, d);
+    visualizar_lista(vetor, n);
     // Vetor com as filas
     Head *vetorFilas = inicializar_vetor(b);
-    adicionar_na_fila(&vetorFilas[0],20);
-    adicionar_na_fila(&vetorFilas[0],30);
-    adicionar_na_fila(&vetorFilas[1],61);
-    adicionar_na_fila(&vetorFilas[2],92);
     visualizar_vetor_filas(vetorFilas, b);
     return 0;
  }
- 
