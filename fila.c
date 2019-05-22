@@ -26,7 +26,7 @@ Fila *remover_da_fila(Fila *node) {
 void visualizar_fila(Fila *node) {
     printf("----------Fila---------\n");
     while (node != NULL) {
-        printf("Num: %s \n", node->num);
+        printf("Num: %d \n", node->num);
         node = node->prox;
     }
 }

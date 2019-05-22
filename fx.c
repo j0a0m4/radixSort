@@ -16,6 +16,7 @@ int *gerar_lista(int n, int d) {
     for (int i = 0; i < n; i++) {
         // gerar elemento aleatório com limite de digitos
         int num = rand() % limit;
+        vetor[i] = num;
     }
     // retornar ponteiro para o vetor
     return vetor;
