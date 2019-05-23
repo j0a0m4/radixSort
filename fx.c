@@ -9,7 +9,7 @@ int *gerar_lista(int n, int d) {
     // para gerar novos items em cada execução
     srand(time(0));
     //determinar paramentros para gerar d digitos
-    int limit = (int) pow(10,d);
+    int limit = (int) pow(10, d);
     //alocar espaco dinamicamente na memoria para o vetor
     int *vetor = (int *) malloc(n * sizeof(int));
     // iterar sobre o vetor para adicionar elementos
