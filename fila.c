@@ -3,12 +3,17 @@
 #include <stdio.h>
 
 Head *inicializar_vetor(int len) {
+    // Aloca dinamicamente memoria para vetor de ponteiros Head de tamanho len
     Head *vetorFilas = (Head *) malloc(len * sizeof(Head));
+    // Ponteiro auxiliar
     Head *vetor = vetorFilas;
+    // Percorre todo vetor de ponteiros
     for (int i = 0; i < len; i++) {
-        // Inicialização do vetor
+        // Atribui pro vetor[i] memoria para fila
         vetorFilas = (Head *) malloc(sizeof(Head));
+        // Inicializa fila com ponteiro pro proximo vazio
         vetorFilas->prox = NULL;
+        // Atualiza ponteiro auxiliar pra proxima posicao
         vetorFilas++;
     }
     return vetor;
@@ -38,18 +43,23 @@ void *adicionar_na_fila(Head *head, int elem) {
         Fila *node = head->prox;
         node = percorrer_fila(node);
         node->prox = new;
+    // Caso a fila esteja vazia
     } else {
         head->prox = new;
     }
 }
 
 int remover_da_fila(Head *head) {
+    // Apontando pro início da fila
     Fila *node = head->prox;
     // Verificar underflow
     if (node != NULL) {
+        // Salvando conteudo do node que vai ser removido
         Fila *ptr = node->prox;
         int elem = node->num;
+        // Desalocando node
         free(node);
+        // Atualizando ponteiro de início da fila
         head->prox = ptr;
         // Retorna elemento removido
         return elem;
@@ -57,17 +67,23 @@ int remover_da_fila(Head *head) {
 }
 
 void visualizar_fila(Head *head) {
+    // Apontando pro início da fila
     Fila *node = head->prox;
+    // Percorre toda fila enquanto tiver node
     while (node != NULL) {
+        // Imprime o conteudo do node na tela
         printf("\t%d", node->num);
+        // Atualiza ponteiro pro proximo node
         node = node->prox;
     }
     printf("\n");
 }
 
 Fila *percorrer_fila(Fila *node) {
+    // Percorre a fila ate o ultimo node
     while (node->prox != NULL) {
         node = node->prox;
     }
+    // Retorna ponteiro pro final da fila
     return node;
 }
